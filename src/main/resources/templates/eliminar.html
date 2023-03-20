@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Informacion Contacto</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+<h1>Informacion del Contacto</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Fech.Nacimiento</th>
+        <th>celular</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contacto : ${contacto}">
+        <td th:text="${contacto.id}"></td>
+        <td th:text="${contacto.nombre}"></td>
+        <td th:text="${contacto.fecha_nacimiento}"></td>
+        <td th:text="${contacto.celular}"></td>
+        <td th:text="${contacto.email}"></td>
+    </tr>
+
+
+    </tbody>
+</table>
+<h1>¿Desea eliminar este contacto?</h1>
+<div style="display: flex; justify-content: center; margin:30px;">
+    <a href="/contactos" th:href="@{/contactos}">
+        <button>NO</button>
+    </a>
+    <a class="eliminar-btn" th:data-id="${contacto.id}" th:href="@{/contactos/{id}/elimina(id=${contacto.id})}"  >
+        <button>SI</button>
+    </a>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.eliminar-btn').click(function () {
+            var id = $(this).data('id');
+            if (confirm("¿Desea eliminar este contacto?")) {
+                window.location.href = '/contactos/' + id + '/elimina';
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

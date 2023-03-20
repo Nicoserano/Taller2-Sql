@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Informacion Contacto</title>
+        <link rel="stylesheet" th:href="@{/css/index.css}">
+    </head>
+    <body>
+      <h1>Informacion del Contacto</h1>
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Fech.Nacimiento</th>
+          <th>celular</th>
+          <th>Email</th>
+          <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="contacto : ${contacto}">
+          <td th:text="${contacto.id}"></td>
+          <td th:text="${contacto.nombre}"></td>
+          <td th:text="${contacto.fecha_nacimiento}"></td>
+          <td th:text="${contacto.celular}"></td>
+          <td th:text="${contacto.email}"></td>
+          <td>
+            <a th:href="@{/contactos/{id}/editar(id=${contacto.id})}">Editar</a>
+            <a th:href="@{/contactos/{id}/eliminar(id=${contacto.id})}">Eliminar</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </body>
+  </html>

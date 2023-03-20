@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Buscar contacto</title>
+        <link rel="stylesheet" th:href="@{/css/formulario.css}">
+    </head>
+    <body>
+        <h1>Buscar Contacto</h1>
+        <form action="/contactos/buscar/resultado" method="GET" th:href="@{/contactos/buscar/resultado}">
+            <label for="nombre">Ingrese el Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <input type="submit" value="Buscar">
+        </form>
+    </body>
+</html>

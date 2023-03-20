@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Editar Contacto</title>
+      <link rel="stylesheet" th:href="@{/css/formulario.css}">
+    </head>
+    <body>
+      <h1>Editar Contacto</h1>
+      <form  th:action="@{/contactos/{id}/edit(id=${contacto.id})}" th:object="${contacto}" method="Post">
+        <div >
+          <label>Nombre : </label>
+          <input type="text" name="nombre" th:field="*{nombre}" placeholder="Digite su nombre : " required>
+        </div>
+
+        <div >
+          <label>celular : </label>
+          <input type="text" name="celular" th:field="*{celular}"  placeholder="Digite su apellido : " required>
+        </div>
+
+        <div >
+          <label>Email : </label>
+          <input type="email" name="email" th:field="*{email}"  placeholder="Digite su email : " required>
+        </div>
+        <button type="submit">Guardar</button>
+      </form>
+
+
+    </body>
+  </html>
