@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Informacion Contacto</title>
-      <link rel="stylesheet" th:href="@{/css/index.css}">
-    </head>
-    <body>
-      <h1>Informacion del Contacto</h1>
-      <table>
-        <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Fech.Nacimiento</th>
-          <th>celular</th>
-          <th>Email</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="contacto : ${contacto}">
-          <td th:text="${contacto.id}"></td>
-          <td th:text="${contacto.nombre}"></td>
-          <td th:text="${contacto.fecha_nacimiento}"></td>
-          <td th:text="${contacto.celular}"></td>
-          <td th:text="${contacto.email}"></td>
-        </tr>
-
-
-        </tbody>
-      </table>
-      <div style="display: flex; justify-content: center; margin:30px;">
-        <a href="/contactos/{id}/editar/datos" th:href="@{/contactos/{id}/editar/datos(id=${contacto.id})}">
-          <button>Editar</button>
-        </a>
-        <a href="/contactos" th:href="@{/contactos}">
-          <button>Regresar</button>
-        </a>
-
-      </div>
-
-    </body>
-  </html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Informacion Contacto</title>
+  <!-- Se agrega un enlace al archivo de estilo CSS -->
+  <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+<h1>Informacion del Contacto</h1>
+<table>
+  <thead>
+  <!-- Se crean los encabezados de la tabla -->
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Fech.Nacimiento</th>
+    <th>celular</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Se crea una fila en la tabla por cada contacto en la lista ${contacto} -->
+  <tr th:each="contacto : ${contacto}">
+    <!-- Se añade el ID del contacto a la columna correspondiente -->
+    <td th:text="${contacto.id}"></td>
+    <!-- Se añade el nombre del contacto a la columna correspondiente -->
+    <td th:text="${contacto.nombre}"></td>
+    <!-- Se añade la fecha de nacimiento del contacto a la columna correspondiente -->
+    <td th:text="${contacto.fecha_nacimiento}"></td>
+    <!-- Se añade el número de celular del contacto a la columna correspondiente -->
+    <td th:text="${contacto.celular}"></td>
+    <!-- Se añade el correo electrónico del contacto a la columna correspondiente -->
+    <td th:text="${contacto.email}"></td>
+  </tr>
+  </tbody>
+</table>
+<!-- Se crean dos botones: uno para editar la información del contacto y otro para regresar a la lista de contactos -->
+<div style="display: flex; justify-content: center; margin:30px;">
+  <!-- Se crea un botón para editar la información del contacto -->
+  <a href="/contactos/{id}/editar/datos" th:href="@{/contactos/{id}/editar/datos(id=${contacto.id})}">
+    <button>Editar</button>
+  </a>
+  <!-- Se crea un botón para regresar a la lista de contactos -->
+  <a href="/contactos" th:href="@{/contactos}">
+    <button>Regresar</button>
+  </a>
+</div>
+</body>
+</html>

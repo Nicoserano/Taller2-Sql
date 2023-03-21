@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Buscar contacto</title>
-        <link rel="stylesheet" th:href="@{/css/formulario.css}">
-    </head>
-    <body>
+    <!-- Este es el documento HTML para buscar contactos -->
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Buscar contacto</title>
+            <!-- Se agrega la hoja de estilo para el formulario -->
+            <link rel="stylesheet" th:href="@{/css/formulario.css}">
+        </head>
+        <body>
         <h1>Buscar Contacto</h1>
-        <form action="/contactos/buscar/resultado" method="GET" th:href="@{/contactos/buscar/resultado}">
-            <label for="nombre">Ingrese el Nombre:</label>
-            <input type="text" id="nombre" name="nombre">
-            <input type="submit" value="Buscar">
-        </form>
-    </body>
-</html>
+            <!-- Este es el formulario para buscar un contacto -->
+            <form action="/contactos/buscar/resultado" method="GET" th:href="@{/contactos/buscar/resultado}">
+                <label for="nombre">Ingrese el Nombre:</label>
+                <!-- Este es el campo de entrada para el nombre -->
+                <input type="text" id="nombre" name="nombre">
+                <!-- Este es el botón de envío del formulario -->
+                <input type="submit" value="Buscar">
+            </form>
+        </body>
+    </html>

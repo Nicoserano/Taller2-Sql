@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Formulario de contacto</title>
-  <link rel="stylesheet" th:href="@{/css/formulario.css}">
+  <head>
+    <title>Formulario de contacto</title>
+    <link rel="stylesheet" th:href="@{/css/formulario.css}"> <!-- Enlaza la hoja de estilo CSS -->
+  </head>
+  <body>
+    <h1>Nuevo contacto</h1>
+    <div class="alert alert-succes"> <!-- Define un contenedor para mensajes de éxito o error (se mostrará vacío por ahora) -->
+    </div>
+    <form action="/contactos/nuevo/creado" method="POST" th:href="@{/contactos/nuevo/creado}"> <!-- Define un formulario que se enviará al servidor mediante el método POST y se enviará a la URL especificada (en este caso "/contactos/nuevo/creado") -->
+        <label for="nombre">Nombre:</label> <!-- Define una etiqueta para un campo de entrada de texto -->
+        <input type="text" id="nombre" name="nombre" required><br><br> <!-- Define un campo de entrada de texto para el nombre y lo hace requerido -->
+        <label for="celular">celular:</label> <!-- Define una etiqueta para un campo de entrada de texto -->
+        <input type="text" id="celular" name="celular" required><br><br> <!-- Define un campo de entrada de texto para el celular y lo hace requerido -->
 
-</head>
-<body>
-<h1>Nuevo contacto</h1>
-<div class="alert alert-succes">
+        <label for="email">Email:</label> <!-- Define una etiqueta para un campo de entrada de texto de correo electrónico -->
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br><br> <!-- Define un campo de entrada de texto para el correo electrónico y lo hace requerido, también incluye un marcador de posición para el valor predeterminado -->
 
-</div>
-<form action="/contactos/nuevo/creado" method="POST" th:href="@{/contactos/nuevo/creado}">
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="fecha_nacimiento">Fecha de nacimiento:</label> <!-- Define una etiqueta para un campo de entrada de fecha -->
+        <input type="Date" id="fecha_nacimiento" name="fecha_nacimiento" format="YYYY-MM-DD" placeholder="YYYY-MM-DD"><br><br> <!-- Define un campo de entrada de fecha y también incluye un marcador de posición para el valor predeterminado -->
 
-  <label for="celular">celular:</label>
-  <input type="text" id="celular" name="celular" required><br><br>
+        <input type="submit" value="Enviar"> <!-- Define un botón para enviar el formulario -->
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br><br>
-
-  <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-  <input type="Date" id="fecha_nacimiento" name="fecha_nacimiento" format="YYYY-MM-DD" placeholder="YYYY-MM-DD"><br><br>
-  <input type="submit" value="Enviar">
-
-</form>
-<a href="/contactos" th:href="@{/contactos}">
-  <button>Cancelar</button>
-</a>
-</body>
+    </form>
+    <a href="/contactos" th:href="@{/contactos}"> <!-- Define un enlace para volver a la página de contactos -->
+      <button>Cancelar</button> <!-- Define un botón para cancelar el formulario -->
+    </a>
+  </body>
 </html>

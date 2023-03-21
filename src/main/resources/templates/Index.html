@@ -1,44 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Lista de contactos</title>
-    <link rel="stylesheet" th:href="@{/css/index.css}">
-</head>
-<body>
-<h1>Lista de contactos</h1>
-<a href="/contactos/nuevo" th:href="@{/contactos/nuevo}">
-    <button>Crear contacto</button>
-</a>
-<a href="/contactos/buscar" th:href="@{/contactos/buscar}">
-    <button>Buscar contacto</button>
-</a>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Fech.Nacimiento</th>
-        <th>celular</th>
-        <th>Email</th>
-        <th>Opciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="contacto : ${contacto}">
-        <td th:text="${contacto.id}"></td>
-        <td th:text="${contacto.nombre}"></td>
-        <td th:text="${contacto.fecha_nacimiento}"></td>
-        <td th:text="${contacto.celular}"></td>
-        <td th:text="${contacto.email}"></td>
-        <td>
-            <a th:href="@{/contactos/{id}/editar(id=${contacto.id})}">Editar</a>
-            <a class="eliminar" th:href="@{/contactos/{id}/eliminar(id=${contacto.id})}">Eliminar</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+    <head>
+        <title>Lista de contactos</title>
+        <link rel="stylesheet" th:href="@{/css/index.css}"> <!-- Enlace al archivo CSS -->
+    </head>
+    <body>
+        <h1>Lista de contactos</h1>
+        <a href="/contactos/nuevo" th:href="@{/contactos/nuevo}">
+            <!-- Enlace al formulario para agregar un nuevo contacto -->
+            <button>Crear contacto</button>
+        </a>
+        <a href="/contactos/buscar" th:href="@{/contactos/buscar}"> <!-- Enlace para buscar contactos -->
+            <button>Buscar contacto</button>
+        </a>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Fech.Nacimiento</th>
+                <th>celular</th>
+                <th>Email</th>
+                <th>Opciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="contacto : ${contacto}"> <!-- Iteración sobre la lista de contactos -->
+                <td th:text="${contacto.id}"></td> <!-- Muestra el ID del contacto -->
+                <td th:text="${contacto.nombre}"></td> <!-- Muestra el nombre del contacto -->
+                <td th:text="${contacto.fecha_nacimiento}"></td> <!-- Muestra la fecha de nacimiento del contacto -->
+                <td th:text="${contacto.celular}"></td> <!-- Muestra el número de celular del contacto -->
+                <td th:text="${contacto.email}"></td> <!-- Muestra el correo electrónico del contacto -->
+                <td>
+                    <a th:href="@{/contactos/{id}/editar(id=${contacto.id})}">Editar</a>
+                    <!-- Enlace para editar el contacto -->
+                    <a class="eliminar" th:href="@{/contactos/{id}/eliminar(id=${contacto.id})}">Eliminar</a>
+                    <!-- Enlace para eliminar el contacto -->
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-</body>
+    </body>
 </html>
-

@@ -1,15 +1,19 @@
+<!-- Este es un archivo HTML que muestra la página principal de la aplicación web "Libreta de Contactos" -->
 <!DOCTYPE html>
-  <html lang="en" xmlns:th="http://www.thymeleaf.org">
-      <head>
-          <meta charset="UTF-8">
-          <title>Libreta de contactos</title>
-          <link rel="stylesheet" th:href="@{/css/home.css}">
-      </head>
-      <body>
-          <h1>Bienvenido a la Libreta de Contactos</h1>
-          <p>Este es un sistema para llevar el control de tus contactos telefónicos</p>
-          <a href="/contactos" th:href="@{/contactos}">
-            <button>Ver Contactos</button>
-          </a>
-      </body>
-  </html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- Se define el lenguaje de la página como inglés y se establece la dirección del motor de plantillas Thymeleaf -->
+<head>
+    <meta charset="UTF-8"> <!-- Se establece el conjunto de caracteres a utilizar en la página -->
+    <title>Libreta de contactos</title> <!-- Se establece el título de la página -->
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <!-- Se establece el enlace al archivo CSS para aplicar estilos a la página -->
+</head>
+<body>
+<h1>Bienvenido a la Libreta de Contactos</h1> <!-- Se muestra un encabezado principal en la página -->
+<p>Este es un sistema para llevar el control de tus contactos telefónicos</p>
+<!-- Se muestra una descripción breve de la funcionalidad de la aplicación web -->
+<a href="/contactos" th:href="@{/contactos}"> <!-- Se muestra un botón para acceder a la lista de contactos -->
+    <button>Ver Contactos</button>
+</a>
+</body>
+</html>
